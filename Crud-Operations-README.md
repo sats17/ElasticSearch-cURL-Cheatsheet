@@ -84,7 +84,7 @@ This File consist curl commands of crud opeations for Elastic search that we mos
   ```
   
 - Get fields from index having more than 1 value in index <br />
-  <sub>Note: append (.keyword) in fieldName if not works i.e(fieldName.keyword).</sub>
+  <sub>Note: append (.keyword) on fieldName if not works i.e(fieldName.keyword).</sub>
   ```javascript
   curl -X GET "http://localhost:9200/indexName/typeName/_search?pretty" -H 'Content-Type: application/json' -d'
   {
