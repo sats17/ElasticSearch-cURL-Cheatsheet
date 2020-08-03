@@ -40,8 +40,8 @@ This File consist curl commands of crud opeations for Elastic search that we mos
   
 - Get all data from Elastic Search for given Index and type.
    ```javascript
-    curl -X GET "http://localhost:9200/indexName/typeName/_search?pretty" -H 'Content-Type: application/json' -d'
-    {
+   curl -X GET "http://localhost:9200/indexName/typeName/_search?pretty" -H 'Content-Type: application/json' -d'
+   {
        "query": {
          "match_all": {}
       }
@@ -101,3 +101,32 @@ This File consist curl commands of crud opeations for Elastic search that we mos
   }
   '
   ```
+  
+- Get given fields from index document having more than 1 value in index <br />
+  <sub>Note: append (.keyword) on fieldName if not works i.e(fieldName.keyword).</sub>
+  ```javascript
+  curl -X GET "http://localhost:9200/indexName/typeName/_search?pretty" -H 'Content-Type: application/json' -d'
+  {
+    "size": 0,
+    "aggs": {
+      "duplicateNames": {
+        "terms": {
+          "field": "fieldName",
+          "min_doc_count": 2,
+          "size": 8415
+        },
+        "aggs": {
+          "hits": {
+            "top_hits": {
+              "_source": [
+                "fieldName1",
+                "fieldName2"
+              ],
+              "size": 6
+            }
+          }
+        }
+      }
+    }
+  }
+  '
