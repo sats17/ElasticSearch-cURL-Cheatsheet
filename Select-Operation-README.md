@@ -21,6 +21,11 @@ This File consist curl commands of select opeation for Elastic search that we mo
   curl -X GET "http://localhost:9200/indexName/typeName/id?_source=true&pretty"
   ```
   
+- Get records from Elastic Search where field name is matches given value(Query parameter search)
+  ```javascript
+  curl -X GET "http://localhost:9200/indexName/typeName/_search?size=100&q=fieldName:fieldValue&pretty"
+  ```
+  
 - Get all data from all Elastic Search Index.
   ```javascript
   curl -X GET "http://localhost:9200/_search?pretty" -H 'Content-Type: application/json' -d'
@@ -64,11 +69,6 @@ This File consist curl commands of select opeation for Elastic search that we mo
     }
     '
     ```
-    
-- Get records from Elastic Search where field name is matches given value(Query parameter search)
-  ```javascript
-  curl -X GET "http://localhost:9200/indexName/typeName/_search?size=100&q=fieldName:fieldValue&pretty"
-  ```
  
 - Check and Return if given field is exist in index, return null if it is not present.(This will work for only outside json keys) <br />
   <sub>Note: append (.keyword) in fieldName if not works i.e(fieldName.keyword).</sub>
