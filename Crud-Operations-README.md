@@ -1,5 +1,5 @@
-# ElasticSearch Curl CRUD Operations Commands
-This Repository consist curl commands of Elastic search that we mostly used
+# CRUD Operations Commands
+This File consist curl commands of crud opeations for Elastic search that we mostly used
 ***
 - Get list of indices from Elastic Search.
   ```
