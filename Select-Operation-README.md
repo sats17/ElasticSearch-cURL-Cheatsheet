@@ -16,6 +16,11 @@ This File consist curl commands of select opeation for Elastic search that we mo
   curl -X GET "http://localhost:9200/indexName/_count?pretty"
   ```
   
+- Get record with id
+  ```javascript
+  curl -X GET "http://localhost:9200/indexName/typeName/id?_source=true&pretty"
+  ```
+  
 - Get all data from all Elastic Search Index.
   ```javascript
   curl -X GET "http://localhost:9200/_search?pretty" -H 'Content-Type: application/json' -d'
