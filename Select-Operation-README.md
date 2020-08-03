@@ -1,5 +1,5 @@
-# CRUD Operations Commands
-This File consist curl commands of crud opeations for Elastic search that we mostly used
+# Select Operation Commands
+This File consist curl commands of select opeation for Elastic search that we mostly used
 ***
 - Get list of indices from Elastic Search.
   ```javascript
