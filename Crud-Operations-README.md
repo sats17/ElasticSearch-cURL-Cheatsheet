@@ -2,15 +2,17 @@
 This File consist curl commands of crud opeations for Elastic search that we mostly used
 ***
 - Get list of indices from Elastic Search.
-  ```
+  ```javascript
   curl -X GET "http://localhost:9200/_cat/indices?pretty"
   ```
+  
 - Get mappings for given indices
-  ```
+  ```javascript
   curl -X GET "http://localhost:9200/_indexName/_mapping?pretty"
   ```
+  
 - Get all data from all Elastic Search Index.
-  ```
+  ```javascript
   curl -X GET "http://localhost:9200/_search?pretty" -H 'Content-Type: application/json' -d'
   {
       "query": {
@@ -19,8 +21,9 @@ This File consist curl commands of crud opeations for Elastic search that we mos
   }
   '
   ```
+  
 - Get all data from all Elastic Search Index with given Document size.
-  ```
+  ```javascript
   curl -X GET "http://localhost:9200/_search?size=10&pretty" -H 'Content-Type: application/json' -d'
   {
       "query": {
@@ -29,8 +32,9 @@ This File consist curl commands of crud opeations for Elastic search that we mos
   }
   '
   ```
- - Get all data from Elastic Search for given Index and type.
-   ```
+  
+- Get all data from Elastic Search for given Index and type.
+   ```javascript
     curl -X GET "http://localhost:9200/_indexName/_typeName/_search?pretty" -H 'Content-Type: application/json' -d'
     {
         "query": {
@@ -39,8 +43,9 @@ This File consist curl commands of crud opeations for Elastic search that we mos
     }
     '
     ```
+    
  - Get all data from Elastic Search for given Index, type and size.
-    ```
+    ```javascript
     curl -X GET "http://localhost:9200/_indexName/_typeName/_search?size=10&pretty" -H 'Content-Type: application/json' -d'
     {
         "query": {
@@ -49,7 +54,8 @@ This File consist curl commands of crud opeations for Elastic search that we mos
     }
     '
     ```
+    
 - Get records from Elastic Search where field name is matches given value(Query parameter search)
-  ```
+  ```javascript
   curl -X GET "http://localhost:9200/_indexName/_typeName/_search?size=100&q=fieldName:fieldValue&pretty"
   ```
