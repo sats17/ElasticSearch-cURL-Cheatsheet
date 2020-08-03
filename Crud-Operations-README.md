@@ -8,7 +8,12 @@ This File consist curl commands of crud opeations for Elastic search that we mos
   
 - Get mappings for given indices
   ```javascript
-  curl -X GET "http://localhost:9200/_indexName/_mapping?pretty"
+  curl -X GET "http://localhost:9200/indexName/_mapping?pretty"
+  ```
+  
+- Get Count of documents that present in given index
+  ```javascript
+  curl -X GET "http://localhost:9200/indexName/_count?pretty"
   ```
   
 - Get all data from all Elastic Search Index.
@@ -35,7 +40,7 @@ This File consist curl commands of crud opeations for Elastic search that we mos
   
 - Get all data from Elastic Search for given Index and type.
    ```javascript
-    curl -X GET "http://localhost:9200/_indexName/_typeName/_search?pretty" -H 'Content-Type: application/json' -d'
+    curl -X GET "http://localhost:9200/indexName/typeName/_search?pretty" -H 'Content-Type: application/json' -d'
     {
         "query": {
             "match_all": {}
@@ -46,7 +51,7 @@ This File consist curl commands of crud opeations for Elastic search that we mos
     
  - Get all data from Elastic Search for given Index, type and size.
     ```javascript
-    curl -X GET "http://localhost:9200/_indexName/_typeName/_search?size=10&pretty" -H 'Content-Type: application/json' -d'
+    curl -X GET "http://localhost:9200/indexName/typeName/_search?size=10&pretty" -H 'Content-Type: application/json' -d'
     {
         "query": {
             "match_all": {}
@@ -57,5 +62,5 @@ This File consist curl commands of crud opeations for Elastic search that we mos
     
 - Get records from Elastic Search where field name is matches given value(Query parameter search)
   ```javascript
-  curl -X GET "http://localhost:9200/_indexName/_typeName/_search?size=100&q=fieldName:fieldValue&pretty"
+  curl -X GET "http://localhost:9200/indexName/typeName/_search?size=100&q=fieldName:fieldValue&pretty"
   ```
