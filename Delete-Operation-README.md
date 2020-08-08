@@ -10,3 +10,30 @@ This File consist curl commands of Delete opeation for Elastic search that we mo
   ```javascript
   curl -X DELETE "http://localhost:9200/indexName/typeName/id?pretty"
   ```
+
+### Delete Documents By Query
+  ###### - For root field
+  ```javascript
+  curl -X POST "http://localhost:9200/indexName/typeName/_delete_by_query?pretty" -H 'Content-Type: application/json' -d'
+  {
+    "query": {
+      "match": {
+        "rootKey": "value that need to be deleted"
+      }
+    }
+  }
+  '
+  ```
+  
+  ###### - For child field
+  ```javascript
+  curl -X POST "http://localhost:9200/indexName/typeName/_delete_by_query?pretty" -H 'Content-Type: application/json' -d'
+  {
+    "query": {
+      "match": {
+        "rootKey.childKey": "value that need to be deleted"
+      }
+    }
+  }
+  '
+  ```
