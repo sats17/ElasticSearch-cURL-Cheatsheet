@@ -70,7 +70,7 @@ This File consist curl commands of select opeation for Elastic search that we mo
    '
    ```
  
-### Check and Return if given field is exist in index, return null if it is not present.(This will work for only outside json keys) <br />
+### Check and Return if given field is exist in index, return null if it is not present.(This will only work with root json key/field) <br />
   ###### - Note: append (.keyword) in fieldName if below example not works. i.e: (fieldName.keyword).
   ```javascript
   curl -X GET "http://localhost:9200/indexName/typeName/_search?pretty" -H 'Content-Type: application/json' -d'
