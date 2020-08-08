@@ -37,3 +37,15 @@ This File consist curl commands of Delete opeation for Elastic search that we mo
   }
   '
   ```
+  
+### Delete all documents from index.
+ ##### - Note: It will delete only documents from index, index and index mapping will be unchanged.
+ ```javascript
+ curl -X POST "http://localhost:9200/indexName/typeName/_delete_by_query?pretty" -H 'Content-Type: application/json' -d'
+ {
+   "query": {
+       "match_all": {}
+   }
+ }
+ '
+ ```
