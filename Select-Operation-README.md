@@ -1,32 +1,32 @@
 # Select Operation Commands
 This File consist curl commands of select opeation for Elastic search that we mostly used
 ***
-- Get list of indices from Elastic Search.
+### Get list of indices from Elastic Search.
   ```javascript
   curl -X GET "http://localhost:9200/_cat/indices?pretty"
   ```
   
-- Get mappings for given indices
+### Get mappings for given indices
   ```javascript
   curl -X GET "http://localhost:9200/indexName/_mapping?pretty"
   ```
   
-- Get Count of documents that present in given index
+### Get Count of documents that present in given index
   ```javascript
   curl -X GET "http://localhost:9200/indexName/_count?pretty"
   ```
   
-- Get record with id
+### Get record with id
   ```javascript
   curl -X GET "http://localhost:9200/indexName/typeName/id?_source=true&pretty"
   ```
   
-- Get records from Elastic Search where field name is matches given value(Query parameter search)
+### Get records from Elastic Search where field name is matches given value(Query parameter search)
   ```javascript
   curl -X GET "http://localhost:9200/indexName/typeName/_search?size=100&q=fieldName:fieldValue&pretty"
   ```
   
-- Get all data from all Elastic Search Index.
+### Get all data from all Elastic Search Index.
   ```javascript
   curl -X GET "http://localhost:9200/_search?pretty" -H 'Content-Type: application/json' -d'
   {
@@ -37,7 +37,7 @@ This File consist curl commands of select opeation for Elastic search that we mo
   '
   ```
   
-- Get all data from all Elastic Search Index with given Document size.
+### Get all data from all Elastic Search Index with given Document size.
   ```javascript
   curl -X GET "http://localhost:9200/_search?size=10&pretty" -H 'Content-Type: application/json' -d'
   {
@@ -48,30 +48,30 @@ This File consist curl commands of select opeation for Elastic search that we mo
   '
   ```
   
-- Get all data from Elastic Search for given Index and type.
+### Get all data from Elastic Search for given Index and type.
    ```javascript
    curl -X GET "http://localhost:9200/indexName/typeName/_search?pretty" -H 'Content-Type: application/json' -d'
    {
        "query": {
          "match_all": {}
       }
-    }
-    '
-    ```
+   }
+   '
+   ```
     
- - Get all data from Elastic Search for given Index, type and size.
-    ```javascript
-    curl -X GET "http://localhost:9200/indexName/typeName/_search?size=10&pretty" -H 'Content-Type: application/json' -d'
-    {
-       "query": {
-         "match_all": {}
-      }
-    }
-    '
-    ```
+### Get all data from Elastic Search for given Index, type and size.
+   ```javascript
+   curl -X GET "http://localhost:9200/indexName/typeName/_search?size=10&pretty" -H 'Content-Type: application/json' -d'
+   {
+      "query": {
+        "match_all": {}
+     }
+   }
+   '
+   ```
  
-- Check and Return if given field is exist in index, return null if it is not present.(This will work for only outside json keys) <br />
-  <sub>Note: append (.keyword) in fieldName if not works i.e(fieldName.keyword).</sub>
+### Check and Return if given field is exist in index, return null if it is not present.(This will work for only outside json keys) <br />
+  ###### - Note: append (.keyword) in fieldName if below example not works. i.e: (fieldName.keyword).
   ```javascript
   curl -X GET "http://localhost:9200/indexName/typeName/_search?pretty" -H 'Content-Type: application/json' -d'
   {
@@ -88,8 +88,8 @@ This File consist curl commands of select opeation for Elastic search that we mo
   '
   ```
   
-- Get fields from index having more than 1 value in index <br />
-  <sub>Note: append (.keyword) on fieldName if not works i.e(fieldName.keyword).</sub>
+### Get fields from index having more than 1 value in index <br />
+  ###### - Note: append (.keyword) on fieldName if below example not works. i.e: (fieldName.keyword).
   ```javascript
   curl -X GET "http://localhost:9200/indexName/typeName/_search?pretty" -H 'Content-Type: application/json' -d'
   {
@@ -107,8 +107,8 @@ This File consist curl commands of select opeation for Elastic search that we mo
   '
   ```
   
-- Get given fields from index document having more than 1 value in index <br />
-  <sub>Note: append (.keyword) on fieldName if not works i.e(fieldName.keyword).</sub>
+### Get given fields from index document having more than 1 value in index <br />
+  ###### - Note: append (.keyword) on fieldName if below example not works. i.e: (fieldName.keyword).
   ```javascript
   curl -X GET "http://localhost:9200/indexName/typeName/_search?pretty" -H 'Content-Type: application/json' -d'
   {
