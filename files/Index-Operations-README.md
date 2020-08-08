@@ -15,3 +15,8 @@ This File consist curl commands on Elastic search index that we mostly used
   ```javascript
   curl -X GET "http://localhost:9200/indexName/_mapping?pretty"
   ```
+
+### Delete Index
+  ```javascript
+  curl -X DELETE "http://localhost:9200/indexName?pretty"
+  ```
