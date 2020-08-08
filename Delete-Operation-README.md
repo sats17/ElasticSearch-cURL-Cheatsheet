@@ -5,3 +5,8 @@ This File consist curl commands of Delete opeation for Elastic search that we mo
   ```javascript
   curl -X DELETE "http://localhost:9200/indexName?pretty=true"
   ```
+  
+### Delete Document By Id
+  ```javascript
+  curl -X DELETE "http://localhost:9200/indexName/typeName/id?pretty"
+  ```
