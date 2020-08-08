@@ -12,7 +12,7 @@ This File consist curl commands of Delete opeation for Elastic search that we mo
   ```
 
 ### Delete Documents By Query
-  ###### - For root field
+  ###### - For root key/field
   ```javascript
   curl -X POST "http://localhost:9200/indexName/typeName/_delete_by_query?pretty" -H 'Content-Type: application/json' -d'
   {
@@ -25,13 +25,13 @@ This File consist curl commands of Delete opeation for Elastic search that we mo
   '
   ```
   
-  ###### - For child field
+  ###### - For nested key/field
   ```javascript
   curl -X POST "http://localhost:9200/indexName/typeName/_delete_by_query?pretty" -H 'Content-Type: application/json' -d'
   {
     "query": {
       "match": {
-        "rootKey.childKey": "value that need to be deleted"
+        "rootKey.nestedKey": "value that need to be deleted"
       }
     }
   }
