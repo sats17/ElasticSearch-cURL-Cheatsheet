@@ -36,6 +36,11 @@ This File consist curl commands on Elastic search index that we mostly used
   '
   ```
   
+### Get which index point to which alias by alias name
+  ```javascript
+  curl -X GET "http://localhost:9200/aliasName/_alias/*?pretty"
+  ```
+  
 ### Add alias to index
 ###### - Add Single alias
   ```javascript
