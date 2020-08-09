@@ -21,7 +21,7 @@ This File consist curl commands of select opeation for Elastic search that we mo
   curl -X GET "http://localhost:9200/indexName/typeName/_search?size=100&q=fieldName:fieldValue&pretty"
   ```
   
-### Get all data from all Elastic Search Index.
+### Get all documents from all Elastic Search Index.
   ```javascript
   curl -X GET "http://localhost:9200/_search?pretty" -H 'Content-Type: application/json' -d'
   {
@@ -32,7 +32,7 @@ This File consist curl commands of select opeation for Elastic search that we mo
   '
   ```
   
-### Get all data from all Elastic Search Index with given Document size.
+### Get all documents from all Elastic Search Index with given Document size.
   ```javascript
   curl -X GET "http://localhost:9200/_search?size=10&pretty" -H 'Content-Type: application/json' -d'
   {
@@ -43,7 +43,7 @@ This File consist curl commands of select opeation for Elastic search that we mo
   '
   ```
   
-### Get all data from Elastic Search for given Index and type.
+### Get all documents from Elastic Search for given Index and type.
    ```javascript
    curl -X GET "http://localhost:9200/indexName/typeName/_search?pretty" -H 'Content-Type: application/json' -d'
    {
@@ -54,7 +54,7 @@ This File consist curl commands of select opeation for Elastic search that we mo
    '
    ```
     
-### Get all data from Elastic Search for given Index, type and size.
+### Get all documents from Elastic Search for given Index, type and size.
    ```javascript
    curl -X GET "http://localhost:9200/indexName/typeName/_search?size=10&pretty" -H 'Content-Type: application/json' -d'
    {
