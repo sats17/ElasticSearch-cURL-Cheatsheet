@@ -1,5 +1,5 @@
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/sats17/)
-
+[![Generic badge](https://img.shields.io/badge/built_by-Sats17-blue.svg)](https://GitHub.com/sats17/)
+[![Generic badge](https://img.shields.io/badge/built_with-cURL-black.svg)](https://curl.haxx.se//)
 # ElasticSearch Curl Commands
 This Repository consist curl commands of Elastic search that we mostly used.
 ***
