@@ -20,3 +20,18 @@ This File consist curl commands on Elastic search index that we mostly used
   ```javascript
   curl -X DELETE "http://localhost:9200/indexName?pretty"
   ```
+
+### Copy all documents from one index to another index (Reindexing)
+###### Suppose if you want to copy all documents from index_v1 to index_v2, then query will be,
+  ```javascript
+  curl -X POST "http://localhost:9200/_reindex?pretty" -H 'Content-Type: application/json' -d'
+  {
+    "source": {
+      "index": "index_v1"
+    },
+    "dest": {
+      "index": "index_v2"
+    }
+  }
+  '
+  ```
