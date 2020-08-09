@@ -1,5 +1,11 @@
-[![Generic badge](https://img.shields.io/badge/built_by-Sats17-blue.svg)](https://GitHub.com/sats17/)
-[![Generic badge](https://img.shields.io/badge/built_with-cURL-black.svg)](https://curl.haxx.se//)
+<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started.html">
+<img align="right" height="70px" src="https://github.com/sats17/ElasticSearch-cURL-Cheatsheet/blob/master/utils/logo.png">
+</a>
+
+[![Generic badge](https://img.shields.io/badge/built_by-Sats17-brightgreen.svg)](https://GitHub.com/sats17/)
+[![Generic badge](https://img.shields.io/badge/built_with-cURL-informational.svg)](https://curl.haxx.se/)
+<br /><br />
+
 # ElasticSearch Curl Commands
 This Repository consist curl commands of Elastic search that we mostly used.
 ***
