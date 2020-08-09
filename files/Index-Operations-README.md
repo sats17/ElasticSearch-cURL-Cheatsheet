@@ -6,7 +6,7 @@ This File consist curl commands on Elastic search index that we mostly used
 - typeName = Your type name associated with that index. From elasticSearch v6 onwards type name is by default "_doc" and <br/>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; from v7 you don't have any mapping type name present in elastic search.
 ***
-### Get list of indices from Elastic Search.
+### Get list of indices from Elastic Search
   ```javascript
   curl -X GET "http://localhost:9200/_cat/indices?pretty"
   ```
@@ -32,6 +32,36 @@ This File consist curl commands on Elastic search index that we mostly used
     "dest": {
       "index": "index_v2"
     }
+  }
+  '
+  ```
+  
+### Add alias to index
+##### - Single alias
+  ```javascript
+  curl -X PUT "http://localhost:9200/indexName/_alias/aliasName?pretty"
+  ```
+##### - Multiple alias to Multiple indexes
+  ```javascript
+  curl -X POST "http://localhost:9200/_aliases?pretty" -H 'Content-Type: application/json' -d'
+  {
+    "actions" : [
+      { "add" : { "index" : "indexName_v1", "alias" : "aliasName1" }},
+      { "add" : { "index" : "indexName_v1", "alias" : "aliasName2" }},
+      { "add" : { "index" : "indexName_v2", "alias" : "aliasName1" }}
+    ]
+  }
+  '
+  ```
+
+### Remove alias from index
+
+  ```javascript
+  curl -X POST "localhost:9200/_aliases?pretty" -H 'Content-Type: application/json' -d'
+  {
+      "actions": [
+          { "remove": { "index": "indexName", "alias": "aliasName" }}
+      ]
   }
   '
   ```
