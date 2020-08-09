@@ -37,11 +37,11 @@ This File consist curl commands on Elastic search index that we mostly used
   ```
   
 ### Add alias to index
-##### - Single alias
+###### - Add Single alias
   ```javascript
   curl -X PUT "http://localhost:9200/indexName/_alias/aliasName?pretty"
   ```
-##### - Multiple alias to Multiple indexes
+###### - Add Multiple alias to different indexes
   ```javascript
   curl -X POST "http://localhost:9200/_aliases?pretty" -H 'Content-Type: application/json' -d'
   {
@@ -55,7 +55,7 @@ This File consist curl commands on Elastic search index that we mostly used
   ```
 
 ### Remove alias from index
-
+###### - Remove single alias
   ```javascript
   curl -X POST "localhost:9200/_aliases?pretty" -H 'Content-Type: application/json' -d'
   {
@@ -65,3 +65,16 @@ This File consist curl commands on Elastic search index that we mostly used
   }
   '
   ```
+###### - Remove multiple aliases from different indexes
+  ```javascript
+  curl -X POST "localhost:9200/_aliases?pretty" -H 'Content-Type: application/json' -d'
+  {
+      "actions": [
+          { "remove": { "index": "indexName_v1", "alias": "aliasName1" }},
+          { "remove": { "index": "indexName_v2", "alias": "aliasName1" }},
+          { "remove": { "index": "indexName_v1", "alias": "aliasName2" }}
+      ]
+  }
+  '
+  ```
+ 
