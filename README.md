@@ -6,7 +6,7 @@
 [![Generic badge](https://img.shields.io/badge/built_with-cURL-informational.svg)](https://curl.haxx.se/)
 <br /><br />
 
-# ElasticSearch Curl Commands
+# ElasticSearch cURL Commands
 This Repository consist curl commands of Elastic search that we mostly used.
 ***
  ### Quick Links
