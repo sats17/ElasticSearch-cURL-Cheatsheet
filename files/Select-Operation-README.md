@@ -42,6 +42,19 @@ This File consist curl commands of select opeation for Elastic search that we mo
   }
   '
   ```
+
+### Get all documents from index where given key and value matches.
+  ```javascript
+  curl -X GET "localhost:9200/indexName/_doc/_search?size=10000&pretty" -H 'Content-Type: application/json' -d'
+  {
+    "query": {
+      "match": {
+        "rootKey.childKey": "Value"
+      }
+    }
+  }
+  '
+  ```
   
 ### Get all documents from Elastic Search for given Index and type.
    ```javascript
