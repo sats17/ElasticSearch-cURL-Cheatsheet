@@ -6,6 +6,42 @@ This File consist curl commands on Elastic search index that we mostly used
 - typeName = Your type name associated with that index. From elasticSearch v6 onwards type name is by default "_doc" and from v7 you don't have any mapping type name present in elastic search.
 - aliasName = Your alias name that present in your elastic search.
 ***
+
+### Create index
+   ```javascript
+  curl -X PUT "localhost:9200/indexName?pretty"
+  ```
+
+### Create index with additional settings [Update following json with your configurations]
+  ```javascript
+  curl -X PUT "localhost:9200/indexName?pretty" -H 'Content-Type: application/json' -d'
+  {
+      "settings" : {
+          "index" : {
+              "number_of_shards" : 3, 
+              "number_of_replicas" : 2 
+          }
+      }
+  }
+  '
+  ```
+  
+### Create index with mappings [Update following json with your mappings]
+  ```javascript
+  curl -X PUT "localhost:9200/indexName?pretty" -H 'Content-Type: application/json' -d'
+  {
+      "mappings" : {
+          "_doc" : {
+             "properties" : {
+                  "field1" : { "type" : "text" }
+              }
+          }
+      }
+  }
+  '
+  ```
+  
+
 ### Get list of indices from Elastic Search
   ```javascript
   curl -X GET "http://localhost:9200/_cat/indices?pretty"
