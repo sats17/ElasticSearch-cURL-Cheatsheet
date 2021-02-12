@@ -56,6 +56,39 @@ This File consist curl commands of select opeation for Elastic search that we mo
   '
   ```
   
+### Get all document from index where for key and value matches.(AND Operation)
+```javascript
+  curl -X GET "localhost:9200/indexName/_doc/_count?pretty" -H 'Content-Type: application/json' -d'
+  {
+    
+    "query": {
+      "bool": {
+        "must": [
+          {
+            "match_phrase": {
+              "rootKey": {
+                "query": "value",
+                "slop": 0,
+                "boost": 1
+              }
+            }
+          },
+          {
+            "match_phrase": {
+              "anotherRootKey": {
+                "query": "value",
+                "slop": 0,
+                "boost": 1
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+  '
+```
+  
 ### Get all documents from Elastic Search for given Index and type.
    ```javascript
    curl -X GET "http://localhost:9200/indexName/typeName/_search?pretty" -H 'Content-Type: application/json' -d'
