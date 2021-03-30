@@ -1,5 +1,5 @@
-# Select Operation Commands
-This File consist curl commands of select opeation for Elastic search that we mostly used
+# Search Operation Commands
+This File consist curl commands of Search opeation for Elastic search that we mostly used
 ***
 ##### - Note: Below two field you can replace with yours value accordingly <br/>
 - indexName = Your Index name that present in your elasticsearch.
@@ -194,3 +194,28 @@ This File consist curl commands of select opeation for Elastic search that we mo
     }
   }
   '
+  ```
+  
+### Geo distance query
+  ```javascript
+  curl -X GET "localhost:9200/indexName/_doc/_search?pretty" -H 'Content-Type: application/json' -d'
+  {
+    "query": {
+      "bool": {
+        "must": {
+          "match_all": {}
+        },
+        "filter": {
+          "geo_distance": {
+            "distance": "1km", #For exact match use 1mm
+            "geo": {
+              "lat": 41.771308,
+              "lon": -88.041473
+            }
+          }
+        }
+      }
+    }
+  }
+  '
+  ```
